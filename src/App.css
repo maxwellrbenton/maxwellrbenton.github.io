@@ -31,3 +31,36 @@
     transform: rotate(360deg);
   }
 }
+
+nav {
+  text-align: left;
+  margin: 5px;
+}
+
+.navlink {
+  margin: 5px;
+  text-decoration: none;
+}
+
+.navlink:hover {
+  color: green;
+}
+
+.profilePic {
+  border-radius: 50%;
+}
+
+.occupation {
+  margin: 4px;
+}
+.company {
+  margin: 4px;
+}
+
+.externalLinks {
+  margin: 10px;
+}
+
+.externalLinks span {
+  margin: 5px;
+}
