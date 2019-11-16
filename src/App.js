@@ -18,7 +18,6 @@ function App() {
           <Route exact path={process.env.PUBLIC_URL + '/'} component={Home}/>
           <Route path={process.env.PUBLIC_URL + '/experiments'} component={Experiments}/>
           <Route path={process.env.PUBLIC_URL + '/projects'} component={Projects}/>
-          <Route path={process.env.PUBLIC_URL + '/react-api'} component={API}/>
           <Redirect to='/' />
         </Switch>
       </main>
