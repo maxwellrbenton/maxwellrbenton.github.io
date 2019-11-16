@@ -6,6 +6,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import gameOfLife from "../assets/game-of-life.png";
 
 const useStyles = makeStyles({
   card: {
@@ -31,7 +32,7 @@ function Projects() {
             </Typography>
             <a href="https://maxwellrbenton.github.io/react-game-of-life/"><CardMedia
               className={classes.media}
-              image="/website/game-of-life.png"
+              image={gameOfLife}
               title="Game of Life"
             /></a>
             <Typography variant="body2" component="p">
