@@ -54,7 +54,11 @@ nav {
   margin: 4px;
 }
 .company {
-  margin: 4px;
+  margin: 20px;
+}
+
+.companyLogo {
+  height: 50px;
 }
 
 .externalLinks {
@@ -63,4 +67,12 @@ nav {
 
 .externalLinks span {
   margin: 5px;
+}
+
+.projects {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
