@@ -16,7 +16,6 @@ function App() {
       <main>
         <Switch>
           <Route exact path={process.env.PUBLIC_URL + '/'} component={Home}/>
-          <Route path={process.env.PUBLIC_URL + '/experiments'} component={Experiments}/>
           <Route path={process.env.PUBLIC_URL + '/projects'} component={Projects}/>
           <Redirect to='/' />
         </Switch>
