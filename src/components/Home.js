@@ -1,26 +1,148 @@
 import React from 'react';
-import linkedin from "../assets/linkedin.png";
 import github from "../assets/github.png";
 import profile from "../assets/profile.png";
+import linkedin from "../assets/linkedin.png";
+import ExperienceSection from './ExperienceSection'
+import { NavLink } from 'react-router-dom'
+
+const flatironschool = {title: "Flatiron School", url: "https://flatironschool.com/"}
+const wework = {title: "WeWork", url: "https://www.wework.com/"}
+const wholefoodsmarket = {title: "Whole Foods Market", url: "https://www.wholefoodsmarket.com/"}
+const titleList = [
+  "SENIOR CURRICULUM DESIGNER",
+  "SENIOR CURRICULUM WRITER",
+  "CURRICULUM WRITER",
+  "SOFTWARE ENGINEERING COACH",
+  "REGIONAL CUSTOMER SERVICE ASSOCIATE COORDINATOR",
+  "CUSTOMER SERVICE TEAM LEADER"
+]
+
+const experience = {
+  "SENIOR CURRICULUM DESIGNER": {
+    companies: [flatironschool, wework],
+    dates: ["04/2019", "Present"],
+    responsibilities: [
+      "Led team projects to update and redesign course materials on both Ruby and React, deployed to hundreds of students",
+      "Performed maintenance operations on one of GitHub’s largest organizations",
+      "Brought an existing 1500+ GitHub issue count to 0",
+      "Improved existing repository linter for maintaining standards across over 1000 repositories",
+      "Implemented operating procedures for rolling out Curriculum content",
+    ],
+    achievements: [
+
+    ]
+  },
+  "SENIOR CURRICULUM WRITER": {
+    companies: [flatironschool, wework],
+    dates: ["07/2018","04/2019"],
+    responsibilities: [
+      "Built Ruby gems to assist in GitHub repository creation and management, improving the consistency and efficiency of repository creation by the Curriculum team",
+      "Created, maintained and updated test driven student materials using RSpec for Ruby and Mocha/Chai for JS testing",
+      "Managed internal feedback, priority issue tracking and communication with stakeholders through JIRA",
+    ],
+    achievements: [
+      
+    ]
+  },
+  "CURRICULUM WRITER": {
+    companies: [flatironschool, wework],
+    dates: ["03/2018","07/2018"],
+    responsibilities: [
+      "Maintained Curriculum through GitHub repositories, resolving critical issues",
+      "Created student lessons and assessments for Ruby, Rails, JavaScript and React",
+      "Redesigned materials and approach for teaching React/Redux",
+    ],
+    achievements: [
+      
+    ]
+  },
+  "SOFTWARE ENGINEERING COACH": {
+    companies: [flatironschool, wework],
+    dates: ["08/2017","03/2018"],
+    responsibilities: [
+      "Taught students in all areas of coursework, including Ruby, Rails, JavaScript, React and Redux",
+      "Conducted technical lectures, reviews and community projects",
+      "Provided feedback on code and tutoring for students",
+    ],
+    achievements: [
+      
+    ]
+  },
+  "REGIONAL CUSTOMER SERVICE ASSOCIATE COORDINATOR": {
+    companies: [wholefoodsmarket],
+    dates: ["09/2015","01/2017"],
+    responsibilities: [
+      "Directly oversaw CS team operations in thirteen stores, conducted audits, as well as, leadership training and reviews",
+      "Responsible for cash office operations in thirty-five stores, maintaining standards and introducing operational efficiencies",
+      "Conducted regular meetings of 40-80 leaders, hosted conference calls, leadership interviews, and general support as needed",
+      "Maintained and advanced the overall Customer Service program for the region (New York, New Jersey, Connecticut)",
+      "Worked with executives, marketing, product teams, construction and vendors on store innovations and regional projects",
+      "Established operational standards, conducted job fairs and training for new store openings throughout the tri-state"
+    ],
+    achievements: [
+      
+    ]
+  },
+  "CUSTOMER SERVICE TEAM LEADER": {
+    companies: [wholefoodsmarket],
+    dates: ["07/2014","09/2015"],
+    responsibilities: [
+      "Led a team of fifty-five Team Members, seven Supervisors and two Associate Team Leaders",
+      "Responsible for all operations, including hiring, terminations, corrective conversations, reviews, interviews and daily tasks",
+    ],
+    achievements: [
+      "Recognized for operational efficiency, successful fundraising campaigns, and supporting fellow leaders on operations/systems",
+      "Created standardized SQL database program for cash handling, implemented in 35 stores"
+    ]
+  }
+}
 
 function Home() {
-    return(<div>
-        
-        <img className="profilePic" src={profile} alt="profile" />
-        <h1>Maxwell Benton</h1>
-        <h2 className="occupation">Senior Curriculum Designer, Software Engineering</h2>
-        <h3 className="company">
-            <a className="navlink" href="https://flatironschool.com/">
-                <svg className="companyLogo" id="svg__logo--mono" viewBox="0 0 233.2 113.2" fill="currentColor">
-                    <path d="M18.4 0h8.1L8.1 61.4H0L18.4 0zM35 0h8.1L24.7 61.4h-8.1L35 0zM51.7 61.5V19.7h20.1v6.2H58.9v10.8h9.6V43h-9.6v18.6h-7.2v-.1zM75.6 61.5V19.7h7.2v35.6h11.3v6.3l-18.5-.1zM105.1 61.5h-7l7.7-41.9h8.9l7.7 41.9h-7l-1.3-9.3h-7.9l-1.1 9.3zm2.3-15.5h5.8l-2.8-18h-.1l-2.9 18zM128 25.9h-7v-6.3h21.1v6.3h-7v35.6h-7.2l.1-35.6zM145.3 61.5V19.7h7.2v41.9l-7.2-.1zM164.7 61.5h-7.2V19.7h10.1c8.1 0 12.2 3.4 12.2 12.4 0 6.7-2.6 9.5-5 10.6l6.1 19h-7.3l-5.1-17.3c-.9.1-2.4.2-3.7.2l-.1 16.9zm0-23.1h2.6c3.9 0 5.3-1.4 5.3-6.4s-1.5-6.4-5.3-6.4h-2.6v12.8zM184.3 29.8c0-5.9 3.5-10.7 11-10.7s11 4.8 11 10.7v21.6c0 5.9-3.5 10.7-11 10.7s-11-4.8-11-10.7V29.8zm7.1 21.4c0 3.1.9 4.6 3.8 4.6s3.8-1.5 3.8-4.6V30c0-3.1-.9-4.6-3.8-4.6s-3.8 1.5-3.8 4.6v21.2zM211.1 61.5V19.7h6.7l8.8 24h.1v-24h6.5v41.9h-6.3l-9.2-26.2h-.1v26.2l-6.5-.1zM64.8 81.1c-.3-3.6-2.2-4.6-3.8-4.6-2.3 0-3.6 1.5-3.6 4.1 0 7.1 14.6 10.6 14.6 21.9 0 6.9-4.6 10.7-11.4 10.7-6.7 0-10.5-5.3-10.8-11.6l6.8-1c.3 4.2 2 6.3 4.3 6.3 2.5 0 4.2-1.3 4.2-3.8 0-8.3-14.6-10.5-14.6-22.5 0-6.7 4.1-10.4 11.1-10.4 5.9 0 9.3 4.2 10 10.2l-6.8.7zM90.5 84.7v-3.2c0-3.5-1.6-5-3.5-5-2.9 0-3.8 1.5-3.8 4.6v21.2c0 3.1.9 4.6 3.8 4.6 2.6 0 3.5-1.5 3.5-4.2v-5h7.2v4.8c0 5.9-3.5 10.7-10.7 10.7-7.5 0-11-4.8-11-10.7V80.9c0-5.9 3.5-10.7 11-10.7 7.2 0 10.7 5.2 10.7 11.5v3.1l-7.2-.1zM102 112.6V70.7h7.2v17.1h7.7V70.7h7.2v41.9h-7.2V94h-7.7v18.6H102zM128.8 80.9c0-5.9 3.5-10.7 11-10.7s11 4.8 11 10.7v21.6c0 5.9-3.5 10.7-11 10.7s-11-4.8-11-10.7V80.9zm7.2 21.4c0 3.1.9 4.6 3.8 4.6s3.8-1.5 3.8-4.6V81.1c0-3.1-.9-4.6-3.8-4.6S136 78 136 81.1v21.2zM155.6 80.9c0-5.9 3.5-10.7 11-10.7s11 4.8 11 10.7v21.6c0 5.9-3.5 10.7-11 10.7s-11-4.8-11-10.7V80.9zm7.2 21.4c0 3.1.9 4.6 3.8 4.6s3.8-1.5 3.8-4.6V81.1c0-3.1-.9-4.6-3.8-4.6s-3.8 1.5-3.8 4.6v21.2zM182 112.6V70.7h7.2v35.6h11.3v6.3H182z">
-                    </path>
-                </svg>  
-            </a>
-        </h3>
-        <section className="externalLinks">
-            <span><a target="_blank" href="https://github.com/maxwellrbenton"><img src={github} alt="github"/></a></span>
-            <span><a target="_blank" href="https://www.linkedin.com/in/maxwellbenton/"><img src={linkedin} alt="linkedin"/></a></span>
+  return (
+    <div className="App">
+      <main>
+        <section className="splash">
+          <img className="profilePic" src={profile} alt="profile" />
+          <div>
+            <h1>MAXWELL BENTON</h1>
+            <h3>SOFTWARE ENGINEER</h3>
+          </div>
         </section>
-    </div>)
+        <section className="resume">
+          <div>
+            <p>Hello!</p>
+            <p>My name is Maxwell Benton, and I am a software engineer. I currently work as the Senior Curriculum Designer of Software Engineering at <a target="_blank" rel="noopener noreferrer" href="https://flatironschool.com/">Flatiron School</a>, where I design and create coursework for students online and on campuses across the United States.</p>
+          </div>
+          <div>
+              <h3><NavLink className="navlink" to='/#projects'>PROJECTS</NavLink></h3>
+          </div>
+          <div>
+            <h3>CONTACT</h3>
+            <li className="contact"><span>Email</span><a target="_blank" rel="noopener noreferrer" href="maxwellbenton@gmail.com">maxwellbenton@gmail.com</a></li>
+            <li className="contact"><span>GitHub</span><a target="_blank" rel="noopener noreferrer" href="https://github.com/maxwellrbenton">https://github.com/maxwellrbenton</a></li>
+            <li className="contact"><span>LinkedIn</span><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/maxwellbenton/">https://www.linkedin.com/in/maxwellbenton/</a></li>
+          </div>
+          <div>
+            <h3>EXPERIENCE</h3>
+            {titleList.map(title => <ExperienceSection title={title} companies={experience[title].companies} responsibilities={experience[title].responsibilities} dates={experience[title].dates} achievements={experience[title].achievements}/>) }
+          </div>
+          <div>
+            <h3>EDUCATION</h3>
+            <li className="education"><b>2017 - Flatiron School</b>Full Stack Web Development, Ruby on Rails, JavaScript</li>
+            <li className="education"><b>2008 - Hunter College</b>Bachelor of the Arts, English Literature and Theory</li>
+          </div>
+        </section>
+      </main>
+      <section className="linksSection">
+        <span><a target="_blank" rel="noopener noreferrer" href="https://github.com/maxwellrbenton"><img className="exlink" src={github} alt="github"/></a></span>
+        <span><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/maxwellbenton/"><img className="exlink" src={linkedin} alt="linkedin"/></a></span>
+        
+      </section>
+      <section className="navigation">
+      
+      </section>
+    </div>
+  );
 }
+
 export default Home;
