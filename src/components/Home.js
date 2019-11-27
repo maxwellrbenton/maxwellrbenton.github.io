@@ -104,8 +104,8 @@ function Home() {
         <section className="splash">
           <img className="profilePic" src={profile} alt="profile" />
           <div>
-            <h1>MAXWELL BENTON</h1>
-            <h3>SOFTWARE ENGINEER</h3>
+            <h1 className="name">MAXWELL BENTON</h1>
+            <h3 className="position">SOFTWARE ENGINEER</h3>
           </div>
         </section>
         <section className="resume">
@@ -118,9 +118,11 @@ function Home() {
           </div>
           <div>
             <h3>CONTACT</h3>
+            <ul>
             <li className="contact"><span>Email</span><a target="_blank" rel="noopener noreferrer" href="maxwellbenton@gmail.com">maxwellbenton@gmail.com</a></li>
             <li className="contact"><span>GitHub</span><a target="_blank" rel="noopener noreferrer" href="https://github.com/maxwellrbenton">https://github.com/maxwellrbenton</a></li>
             <li className="contact"><span>LinkedIn</span><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/maxwellbenton/">https://www.linkedin.com/in/maxwellbenton/</a></li>
+            </ul>
           </div>
           <div>
             <h3>EXPERIENCE</h3>
@@ -128,8 +130,10 @@ function Home() {
           </div>
           <div>
             <h3>EDUCATION</h3>
+            <ul>
             <li className="education"><b>2017 - Flatiron School</b>Full Stack Web Development, Ruby on Rails, JavaScript</li>
             <li className="education"><b>2008 - Hunter College</b>Bachelor of the Arts, English Literature and Theory</li>
+            </ul>
           </div>
         </section>
       </main>
@@ -137,9 +141,6 @@ function Home() {
         <span><a target="_blank" rel="noopener noreferrer" href="https://github.com/maxwellrbenton"><img className="exlink" src={github} alt="github"/></a></span>
         <span><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/maxwellbenton/"><img className="exlink" src={linkedin} alt="linkedin"/></a></span>
         
-      </section>
-      <section className="navigation">
-      
       </section>
     </div>
   );

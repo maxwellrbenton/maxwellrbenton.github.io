@@ -25,6 +25,7 @@ function Projects() {
     <>
     <div className="projectsPage">
       <h3>PROJECTS</h3>
+      <h4><NavLink className="navlink" to='/'>GO BACK</NavLink></h4>
       <div className="projects">
         <Card className={classes.card}>
           <CardContent>
@@ -52,7 +53,7 @@ function Projects() {
       </div>
     </div>
     <section className="projectNav">
-      <NavLink className="navlink" to='/'>HOME</NavLink>
+      
     </section>
     </>
   )
