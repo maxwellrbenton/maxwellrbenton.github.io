@@ -1,32 +1,43 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
 
-/* .projectsPage {
+/* Root Container */
+#root {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  align-content: center;
-}
-.projects {
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 
- */
-
-
-
- @media only screen and (max-width: 600px) {
-
+/* App Container */
 .App {
-  position: relative;
-  overflow: hidden;
-  width: 100vw;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
+/* Main Content */
 main {
-  width: 96vw;
-  margin: 0 2vw;
+  height: 100vh;
 }
+
+/* CV Section */
+.cv {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Splash Section */
 .splash {
   display: flex;
   flex-flow: column;
@@ -34,185 +45,146 @@ main {
   align-items: center;
   align-content: center;
   height: 100vh;
+  width: 100vw;
 }
 
 .splash * {
-  text-align: center;
+  margin: 0 0.5em;
 }
 
+.splash div {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+/* Media Queries */
+@media only screen and (min-width: 600px) {
+  .splash {
+    flex-flow: row nowrap;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .splash * {
+    max-width: 100%;
+  }
+
+  .splash div {
+    margin: 1em;
+  }
+}
+
+/* Resume Section */
+#resume {
+  text-align: justify;
+  margin: 0 0.5em;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+#resume div {
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Profile Picture */
 .profilePic {
   border-radius: 50%;
+  max-width: 50vw;
+  width: 200px;
 }
 
-h1, h3.position {
-  white-space: nowrap;
-  width: 96vw;
-  margin: 0 2vw;
-}
-
-p {
-  font-size: 150%;
-  text-align: justify;
-  width: 96vw;
-}
-
-li {
-  text-align: justify;
-  font-size: 130%;
-  width: 80vw;
-  margin: 0 2vw;
-}
-
-.contact {
-  list-style-type: none;
-  font-size: 100%;
-  padding: 0;
-  margin: 0 -5vw;
-}
-
-.contact span {
-  position: absolute;
-  visibility: hidden;
-  text-decoration: none;
-}
-
-.linksSection {
+/* Project Navigation */
+.projectNav {
   position: absolute;
   top: 0;
   left: 0;
-  margin: 5px;
 }
+
+/* Projects Page */
+.projectsPage {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+/* Projects */
+.projects {
+  display: flex;
+  justify-content: center;
+}
+
+/* Block Bots */
+span.block-bots {
+  display: none;
+}
+
+/* Navigation */
+.navigation {
+  position: absolute;
+  right: 0;
+}
+
+/* Headings */
+h1 {
+  margin: 0;
+}
+
+h4 .company {
+  margin: 0;
+}
+
+/* Links */
+.company,
+.company a {
+  color: #444;
+}
+
+i {
+  color: #777;
+}
+
+/* Lists */
+ul {
+  list-style-type: circle;
+}
+
+/* List Items */
+li {
+  text-align: justify;
+}
+
+/* Contact List Item */
+li.contact {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  text-align: left;
+  align-items: baseline;
+}
+
+/* Education List Item */
+li.education {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+/* External Links Section */
+.linksSection {
+  text-align: left;
+  float: left;
+  height: 0;
+  top: 0;
+  left: 0;
+}
+
+/* External Link */
 .exlink {
   padding: 5px;
   width: 30px;
-}
-
-}
-@media only screen and (min-width: 600px) {
-  .App {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  main {
-    height: 100vh;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  main section {
-    min-width: 425px;
-    width: 50vw;
-  }
-  li.contact {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-  li.education {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-  .profilePic {
-    border-radius: 50%;
-    width: 200px;
-  }
-  
-  .linksSection {
-    position: absolute;
-    left: 0;
-  }
-  
-  .exlink {
-    padding: 5px;
-    width: 30px;
-  }
-  
-  .navigation {
-    position: absolute;
-    right: 0;
-    margin: 5px;
-  }
-  
-  h1{
-    margin: 0;
-    white-space: nowrap;
-  }
-  
-  h4 .company {
-    margin: 0;
-  }
-  
-  .company, .company a {
-    color: #444;
-  }
-  
-  i {
-    color: #777;
-  }
-  
-  li {
-    text-align: justify;
-  }
-  .App-logo {
-    height: 40vmin;
-  }
-  
-  .resume {
-    text-align: justify;
-  }
-  
-  .splash {
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    display: flex;
-    flex-flow: row wrap;
-    height: 100vh;
-  }
-  
-  .splash * {
-    margin: 5px;
-  }
-  .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
-  .App-link {
-    color: #09d3ac;
-  }
-  
-  .projectsPage {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-  }
-  .projects {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .projectNav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 5px;
-  }
-  
 }
