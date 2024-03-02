@@ -1,6 +1,6 @@
 import "../App.css";
 import github from "../assets/github.png";
-import profile from "../assets/profile.png";
+import profile from "../assets/profile-pic.png";
 import linkedin from "../assets/linkedin.png";
 
 const zigatta = {

@@ -86,6 +86,7 @@ main {
 #resume div {
   width: 100%;
   max-width: 800px;
+  margin: 1em 0
 }
 
 /* Profile Picture */
